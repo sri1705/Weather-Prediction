@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;1,400&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding:0;
+}
+body{
+    background: url(https://cdn.pixabay.com/photo/2020/02/21/17/23/sky-4868218_1280.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100vh;
+    font-family: 'poppins', sans-serif;
+}
+.d-container{
+    padding: 20px 70px;
+    color: #fff;
+}
+.current-info{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.date-container{
+    font-weight: 100;
+}
+.date-container .time{
+    font-size: 70px;
+}
+.date-container #am-pm{
+    font-size: 30px;
+    margin-left: 20px;
+}
+.date-container .date{
+    font-size: 30px;
+}
+.suggestion{
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    font-size: larger;
+    color: rgba(24, 24,27, 0.6);
+    background: rgba(24, 24,27, 0.4);
+}
+.place-container{
+    text-align: end;
+}
+.place-container .time-zone{
+    font-size: 30px;
+    font-weight: 200;
+}
+.place-container .country{
+    font-size: 12px;
+    font-weight: 700;
+}
+.current-info .others{
+    display: flex;
+    flex-direction: column;
+    background: rgba(24, 24,27, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px 0;
+    border: 1px solid #eee;
+}
+.current-info .others .weather-item{
+    display: flex;
+    justify-content: space-between;
+}
+.future-forecast{
+    background: rgba(24, 24,27, 0.6);
+    padding: 25px;
+    display: flex;
+    color: white;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.future-forecast .today{
+    display: flex;
+    font-weight: 900;
+    align-items: center;
+    justify-content: center;
+}
+.future-forecast .today .day{
+    padding: 5px 15px;
+    background: rgba(24, 24,27, 0.3);
+    border-radius: 50px;
+    text-align: center;
+}
+.future-forecast .today .temp{
+    font-size: 20px;
+    padding-top: 15px;
+}
+.future-forecast .weather-forecast{
+    display: flex;
+}
+.weather-forecast .weather-forecast-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 10px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 15px;
+}
+.weather-forecast .weather-forecast-item .day{
+    background: rgba(24, 24,27, 0.3);
+    width: 50%;
+    border-radius: 50px;
+    text-align: center;
+}
+.weather-forecast .weather-forecast-item .temp{
+    font-weight: 500;
+    padding-top: 1px;
+}
+.card{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    height: 50vh;
+    margin: 0;
+    background: rgba(24, 24,27, 0.8);
+    padding: 2em;
+    border-radius: 30px;
+    width: 100%;
+    max-width: 420px;
+    margin: 1em;
+    font-size: 100%;
+}
+h1.temp{
+    margin: 0;
+    margin-bottom: 0.4em;
+    font-weight: bold;
+}
+button{
+    margin: 0.5em;
+    border-radius: 50%;
+    border: none;
+    background:#7c7c7c2b;
+    color: white;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+input.search-bar{
+    border: none;
+    outline: none;
+    padding: 0.3em 1em;
+    border-radius: 24px;
+    background:#7c7c7c2b;
+    color: white;
+    font-family: inherit;
+    font-size: 120%;
+ }
+button:hover{
+    background: #7c7c7c6b;
+}
+.description{
+    text-transform: capitalize;
+    margin-left: 8px;
+}
+#plus{
+    display: flex;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    padding: 0.1em 1em;
+    border-radius: 24px;
+    width: 45%;
+    background:#7c7c7c2b;
+    color: white;
+    font-size: 120%;
+}
+#plus:hover{
+    background: #7c7c7c6b;
+}
+.flex{
+    display: flex-end;
+}
+.weather.loading{
+    visibility: hidden;
+    max-height: 20px;
+    position: relative;
+}
+.weather.loading:after{
+    visibility: visible;
+    content: "Loading...";
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 20px;
+}
+.Chennai,.Bangalore,.Hyderabad,.Mumbai,.Kolkata{
+    background: rgba(24, 24,27, 0.8);
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px 0;
+    display: block;
+}
+.country-weather{
+    cursor: move;
+}
+.searchCard{
+    display: flex;
+    flex-direction: column;
+}
+.header{
+    width: 100%;
+    height: 60px;
+}
+.showLeft{
+    text-shadow: none !important;
+    color:black;
+    padding:10px;
+}
+.icons li {
+    background: none repeat scroll 0 0 black;
+    height: 3px;
+    width: 3px;
+    padding-bottom: 0;
+    line-height: 0;
+    list-style: none outside none;
+    margin-right: 15px;
+    margin-top: 3px;
+    vertical-align: top;
+    border-radius:50%;
+    pointer-events: none;
+}
+.btn-left {
+    left: 0.4em;
+}
+.btn-right {
+    right: 0.4em;
+}
+.btn-left, .btn-right {
+    position: relative;
+    top: 0.24em;
+}
+.dropbtn {
+    position: relative;
+    color:black;
+    font-size: 7px;
+    border: none;
+    cursor: pointer;
+}
+.dropdown {
+    position: absolute;
+    display: inline-block;
+    right: 0.4em;
+}
+
+.dropdown-content {
+    display: none;
+    position: relative;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown-content a {
+    color: white;
+    width: 100%;
+    padding: 0px;
+    text-decoration: none;
+    display: flex;
+}
+.show {display:block;}
+
+
+
+
+
+
+
+
+@media only screen and (max-width:730px){
+    .future-forecast{
+        justify-content: start;
+        align-items: none;
+        overflow-y: scroll;
+    }
+}
+@media only screen and (max-width: 1000px){
+    .future-forecast{
+        justify-content: start;
+        align-items: none;
+        overflow-x: scroll;
+    }
+}
+@media (min-width:490px) and (max-width:1280px) { 
+    .country-weather{
+        align-items: flex-start;
+    }
+}
+@media (min-width:990px) and (max-width:1200px) { 
+    .country-weather{
+        font-size: small;
+    }
+}
+
+

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <title>Weather Prediction</title>
+</head>
+<body>
+    <div class="d-container">
+        <div class="current-info">
+
+            <div class="date-container">
+                <div class="time" id="time">
+                    <b>12:30 <span id="am-pm">PM</span></b>
+                </div>
+                <div class="date" id="date">
+                   <b> Monday, 23 May </b>
+                </div>
+                <div class="others" id="current-weather-items">
+                </div>
+                <button class="suggestion" onclick="window.location.href='hot.html'"><b>Suggestions</b></button>
+            </div>
+            <div class="place-container">
+                <div class="time-zone" id="time-zone"></div>
+                <div id="country" class="country"></div>
+                <br>
+                <div class="searchCard">
+                    <div class="card">
+                        <div class="search">
+                            <input type="text" class="search-bar" placeholder="Search">
+                            <button><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M909.6 854.5L649.9 594.8C690.2 542.7 712 479 712 412c0-80.2-31.3-155.4-87.9-212.1-56.6-56.7-132-87.9-212.1-87.9s-155.5 31.3-212.1 87.9C143.2 256.5 112 331.8 112 412c0 80.1 31.3 155.5 87.9 212.1C256.5 680.8 331.8 712 412 712c67 0 130.6-21.8 182.7-62l259.7 259.6a8.2 8.2 0 0 0 11.6 0l43.6-43.5a8.2 8.2 0 0 0 0-11.6zM570.4 570.4C528 612.7 471.8 636 412 636s-116-23.3-158.4-65.6C211.3 528 188 471.8 188 412s23.3-116.1 65.6-158.4C296 211.3 352.2 188 412 188s116.1 23.2 158.4 65.6S636 352.2 636 412s-23.3 116.1-65.6 158.4z"></path></svg></button>
+                        <div class="weather loading">
+                            <h2 class="city">Weather in Denver</h2>
+                            <h1 class="temp">51°C</h1>
+                            <p class="add-city accordion-container" onclick="addCity()" id="btn">
+                            <i class="fa fa-plus accordion-btn" aria-hidden="true" id="plus"> &nbsp; Add City</i>
+                            </p>
+                            <div class="flex">
+                            <img src="https://openweathermap.org/img/wn/04n.png" alt="" class="icon">
+                            <div class="description">Cloudy</div>
+                            </div>
+                            <div class="humidity" style="padding-left: 0px;">Humidity    60%</div>
+                            <div class="wind">Wind Speed   6.2</div>
+                            <div id="shared-container"></div>
+                        </div>
+                        </div>
+                    </div>
+            </div>
+            </div>
+            </div>
+            <div class="container">
+                <section class="row" id="sortlist">
+                <div draggable="true" class="country-weather  col-md-2">
+                <div class="Chennai parCity">
+                    <h2 class="cityc" id="name">Weather in Chennai</h2>
+                    <div class="header">
+                        <div class="dropdown">
+                            <ul class="dropbtn icons btn-right showLeft" onclick="showDropdown(0)">
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                            <div  class="dropdown-content myDropdown">
+                                <a href="#home" onclick="remove(0)">Remove</a>
+                            </div>
+                        </div>
+                    </div>
+                    <h1 class="tempc" id="temp">51°C</h1>
+                    <div class="flexc">
+                    <div class="descriptionc" id="desc">Cloudy</div>
+                    </div>
+                    <div class="humidityc" id="hum" style="padding-left: 0px;">Humidity    60%</div>
+                    <div class="windc" id="wind">Wind Speed   6.2</div>
+                </div>
+                </div>
+                <div draggable="true" class="country-weather col-md-2">
+                <div class="Bangalore parCity">
+                    <h2 class="cityb">Weather in Bangalore</h2>
+                    <div class="header">
+                        <div class="dropdown">
+                            <ul class="dropbtn icons btn-right showLeft" onclick="showDropdown(1)">
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                            <div class="dropdown-content myDropdown">
+                                <a href="#home" onclick="remove(1)">Remove</a>
+                            </div>
+                        </div>
+                    </div>
+                    <h1 class="tempb">51°C</h1>
+                    <div class="flexb">
+                    <div class="descriptionb">Cloudy</div>
+                    </div>
+                    <div class="humidityb" style="padding-left: 0px;">Humidity    60%</div>
+                    <div class="windb">Wind Speed   6.2</div>
+                </div>
+                </div>
+                <div draggable="true" class="country-weather col-md-2">
+                <div class="Hyderabad parCity">
+                    <h2 class="cityh">Weather in Hyderabad</h2>
+                    <div class="header">
+                        <div class="dropdown">
+                            <ul class="dropbtn icons btn-right showLeft" onclick="showDropdown(2)">
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                            <div class="dropdown-content myDropdown">
+                                <a href="#home" onclick="remove(2)">Remove</a>
+                            </div>
+                        </div>
+                    </div>
+                    <h1 class="temph">51°C</h1>
+                    <div class="flexh">
+                    <div class="descriptionh">Cloudy</div>
+                    </div>
+                    <div class="humidityh" style="padding-left: 0px;">Humidity    60%</div>
+                    <div class="windh">Wind Speed   6.2</div>
+                </div>
+                </div>
+                <div draggable="true" class="country-weather col-md-2">
+                    <div class="Mumbai parCity">
+                        <h2 class="citym">Weather in Mumbai</h2>
+                        <div class="header">
+                            <div class="dropdown">
+                                <ul class="dropbtn icons btn-right showLeft" onclick="showDropdown(3)">
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                                <div class="dropdown-content myDropdown">
+                                    <a href="#home" onclick="remove(3)">Remove</a>
+                                </div>
+                            </div>
+                        </div>
+                        <h1 class="tempm">51°C</h1>
+                        <div class="flexm">
+                        <div class="descriptionm">Cloudy</div>
+                        </div>
+                        <div class="humiditym" style="padding-left: 0px;">Humidity    60%</div>
+                        <div class="windm">Wind Speed   6.2</div>
+                    </div>
+                    </div>
+                    <div draggable="true" class="country-weather col-md-2">
+                        <div class="Kolkata parCity">
+                            <h2 class="cityk">Weather in Kolkata</h2>
+                            <div class="header">
+                                <div class="dropdown">
+                                    <ul class="dropbtn icons btn-right showLeft" onclick="showDropdown(4)">
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                    </ul>
+                                    <div class="dropdown-content myDropdown">
+                                        <a href="#home" onclick="remove(4)">Remove</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <h1 class="tempk">51°C</h1>
+                            <div class="flexk">
+                            <div class="descriptionk">Cloudy</div>
+                            </div>
+                            <div class="humidityk" style="padding-left: 0px;">Humidity    60%</div>
+                            <div class="windk">Wind Speed   6.2</div>
+                        </div>
+                    </div>
+                    <!--
+                        <div draggable="true" class="country-weather col-md-2">
+                        <div class="parCity">
+                            <h2 class="city" id="city">Weather in Kolkata</h2>
+                            <div class="header">
+                                <div class="dropdown">
+                                    <ul class="dropbtn icons btn-right showLeft" onclick="showDropdown(4)">
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                    </ul>
+                                    <div class="dropdown-content myDropdown">
+                                        <a href="#home" onclick="remove(4)">Remove</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <h1 class="temp" id="temp">51°C</h1>
+                            <div class="flex">
+                            <div class="description" id="desc">Cloudy</div>
+                            </div>
+                            <div class="humidity" id="humidity" style="padding-left: 0px;">Humidity    60%</div>
+                            <div class="wind" id="wind">Wind Speed   6.2</div>
+                        </div>
+                    </div>
+                    -->
+                </div>
+            </section>
+           
+    </div>
+    <div class="future-forecast">
+        <div class="today" id="current-temp">
+            <img src="C:\Users\Srisakthi\Desktop\Sri\cloud.png" alt="weather icon" class="w-icon">
+            <div class="others">
+            <div class="day"><b>Monday</b></div>
+            <div class="temp">Night - 25.6&#176; C</div>
+            <div class="temp">Day - 35.6&#176; C</div>
+            </div>
+        </div>
+        <div class="weather-forecast" id="weather-forecast">
+            <div class="weather-forecast-item">
+                <div class="day"><b> Tue </b></div>
+                <img src="C:\Users\Srisakthi\Desktop\Sri\cloud.png" alt="weather icon" class="w-icon">
+                <div class="temp">Night - 25.6&#176; C</div>
+                <div class="temp">Day - 35.6&#176; C</div>
+            </div>
+            <div class="weather-forecast-item">
+                <div class="day"><b> Wed </b></div>
+                <img src="C:\Users\Srisakthi\Desktop\Sri\cloud.png" alt="weather icon" class="w-icon">
+                <div class="temp">Night - 25.6&#176; C</div>
+                <div class="temp">Day - 35.6&#176; C</div>
+            </div>
+            <div class="weather-forecast-item">
+                <div class="day"><b> Thur </b></div>
+                <img src="C:\Users\Srisakthi\Desktop\Sri\cloud.png" alt="weather icon" class="w-icon">
+                <div class="temp">Night - 25.6&#176; C</div>
+                <div class="temp">Day - 35.6&#176; C</div>
+            </div>
+            <div class="weather-forecast-item">
+                <div class="day"><b> Fri </b></div>
+                <img src="C:\Users\Srisakthi\Desktop\Sri\cloud.png" alt="weather icon" class="w-icon">
+                <div class="temp">Night - 25.6&#176; C</div>
+                <div class="temp">Day - 35.6&#176; C</div>
+            </div>
+            <div class="weather-forecast-item">
+                <div class="day"><b> Sat </b></div>
+                <img src="C:\Users\Srisakthi\Desktop\Sri\cloud.png" alt="weather icon" class="w-icon">
+                <div class="temp">Night - 25.6&#176; C</div>
+                <div class="temp">Day - 35.6&#176; C</div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web-animations/2.3.2/web-animations.min.js" integrity="sha512-oAY57i8MXmaOP7pAylNLnULAM4QLV3uGnvnXVY4zF229/zFzTvG2/5YIgH8iN8oZR2hnbkiDPd4JCJGaH4oG6g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js" integrity="sha512-UXumZrZNiOwnTcZSHLOfcTs0aos2MzBWHXOHOuB0J/R44QB0dwY5JgfbvljXcklVf65Gc4El6RjZ+lnwd2az2g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/muuri/0.5.3/muuri.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        
+        window.addEventListener("DOMContentLoaded", () => {
+          slist(document.getElementById("sortlist"));
+        });
+    </script>
+    
+</body>
+</html>
