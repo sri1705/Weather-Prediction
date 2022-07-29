@@ -163,14 +163,14 @@ button:hover{
 #plus{
     display: flex;
     cursor: pointer;
-    border: none;
-    outline: none;
     padding: 0.1em 1em;
     border-radius: 24px;
-    width: 45%;
-    background:#7c7c7c2b;
-    color: white;
+    width: 100px;
+    min-height: 50px;
+    background:whitesmoke;
+    color: black;
     font-size: 120%;
+    font-style:oblique;
 }
 #plus:hover{
     background: #7c7c7c6b;
@@ -191,13 +191,31 @@ button:hover{
     top: 0;
     left: 20px;
 }
-.Chennai,.Bangalore,.Hyderabad,.Mumbai,.Kolkata{
+.parCity{
     background: rgba(24, 24,27, 0.8);
     padding: 10px;
     border-radius: 10px;
-    margin: 10px 0;
-    display: block;
+   
 }
+
+
+       
+       #Second,#Third,#Fourth,#Fifth,#Sixth {
+          visibility: hidden;
+        }
+        
+        
+        #add2,#add3,#add4 ,#add5{
+          visibility: hidden;
+        }
+   
+        #add0{
+            display: none;
+        }
+ #add1{
+    visibility: visible;
+ }
+
 .country-weather{
     cursor: move;
 }
@@ -258,20 +276,17 @@ button:hover{
     z-index: 1;
 }
 .dropdown-content a {
-    color: white;
+    color: #c1b4b4de;
     width: 100%;
     padding: 0px;
     text-decoration: none;
     display: flex;
 }
+.dropdown-content a:hover{
+    color:white;
+    text-decoration: solid;
+}
 .show {display:block;}
-
-
-
-
-
-
-
 
 @media only screen and (max-width:730px){
     .future-forecast{

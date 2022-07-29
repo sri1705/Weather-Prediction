@@ -9,6 +9,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src = 
+  "https://code.jquery.com/jquery-1.10.2.js">
+      </script>
+        
+      <script src = 
+  "https://code.jquery.com/ui/1.10.4/jquery-ui.js">
+      </script>
 
     <title>Weather Prediction</title>
 </head>
@@ -39,9 +46,7 @@
                         <div class="weather loading">
                             <h2 class="city">Weather in Denver</h2>
                             <h1 class="temp">51°C</h1>
-                            <p class="add-city accordion-container" onclick="addCity()" id="btn">
-                            <i class="fa fa-plus accordion-btn" aria-hidden="true" id="plus"> &nbsp; Add City</i>
-                            </p>
+                            
                             <div class="flex">
                             <img src="https://openweathermap.org/img/wn/04n.png" alt="" class="icon">
                             <div class="description">Cloudy</div>
@@ -58,20 +63,23 @@
             <div class="container">
                 <section class="row" id="sortlist">
                 <div draggable="true" class="country-weather  col-md-2">
-                <div class="Chennai parCity">
+                <div class="Chennai parCity" id="Chennai">
                     <h2 class="cityc" id="name">Weather in Chennai</h2>
                     <div class="header">
                         <div class="dropdown">
-                            <ul class="dropbtn icons btn-right showLeft" onclick="showDropdown(0)">
+                            <ul class="dropbtn icons btn1-right showLeft" onclick="showDropdown(0)">
                                 <li></li>
                                 <li></li>
                                 <li></li>
                             </ul>
                             <div  class="dropdown-content myDropdown">
-                                <a href="#home" onclick="remove(0)">Remove</a>
+                                <a href="#home" onclick="remove('Chennai','add0','add1')">Remove</a>
                             </div>
                         </div>
                     </div>
+                    <p class="add-city accordion-container" onclick="addCity('Chennai','add0','add1')" id="add0">
+                        <i class="fa fa-plus accordion-btn1" aria-hidden="true" id="plus"> &nbsp; Add City</i>
+                        </p>
                     <h1 class="tempc" id="temp">51°C</h1>
                     <div class="flexc">
                     <div class="descriptionc" id="desc">Cloudy</div>
@@ -81,122 +89,136 @@
                 </div>
                 </div>
                 <div draggable="true" class="country-weather col-md-2">
-                <div class="Bangalore parCity">
-                    <h2 class="cityb">Weather in Bangalore</h2>
+                <div class="Second parCity" id="Second">
+                    <h2 class="city">Weather in Bangalore</h2>
                     <div class="header">
                         <div class="dropdown">
-                            <ul class="dropbtn icons btn-right showLeft" onclick="showDropdown(1)">
+                            <ul class="dropbtn icons btn1-right showLeft" onclick="showDropdown(1)">
                                 <li></li>
                                 <li></li>
                                 <li></li>
                             </ul>
                             <div class="dropdown-content myDropdown">
-                                <a href="#home" onclick="remove(1)">Remove</a>
+                                <a href="#home" onclick="remove('Second','add1','add2')">Remove</a>
                             </div>
                         </div>
                     </div>
-                    <h1 class="tempb">51°C</h1>
-                    <div class="flexb">
-                    <div class="descriptionb">Cloudy</div>
-                    </div>
-                    <div class="humidityb" style="padding-left: 0px;">Humidity    60%</div>
-                    <div class="windb">Wind Speed   6.2</div>
+                    <p class="add-city accordion-container" onclick="addCity('Second','add1','add2')" id="add1">
+                        <i class="fa fa-plus accordion-btn1" aria-hidden="true" id="plus"> &nbsp; Add City</i>
+                        </p>
+                       
+                    <h1 class="temp">51°C</h1>
+                    
+                    <div class="description flex">Cloudy</div>
+                   
+                    <div class="humidity" style="padding-left: 0px;">Humidity    60%</div>
+                    <div class="wind">Wind Speed   6.2</div>
+                
                 </div>
                 </div>
-                <div draggable="true" class="country-weather col-md-2">
-                <div class="Hyderabad parCity">
-                    <h2 class="cityh">Weather in Hyderabad</h2>
+                <div draggable="true" class="country-weather col-md-2" id="draggable">
+                <div class="Third parCity" id="Third">
+                    <h2 class="city">Weather in Hyderabad</h2>
                     <div class="header">
                         <div class="dropdown">
-                            <ul class="dropbtn icons btn-right showLeft" onclick="showDropdown(2)">
+                            <ul class="dropbtn icons btn1-right showLeft" onclick="showDropdown(2)">
                                 <li></li>
                                 <li></li>
                                 <li></li>
                             </ul>
                             <div class="dropdown-content myDropdown">
-                                <a href="#home" onclick="remove(2)">Remove</a>
+                                <a href="#home" onclick="remove('Third','add2','add3')">Remove</a>
                             </div>
                         </div>
                     </div>
-                    <h1 class="temph">51°C</h1>
-                    <div class="flexh">
-                    <div class="descriptionh">Cloudy</div>
-                    </div>
-                    <div class="humidityh" style="padding-left: 0px;">Humidity    60%</div>
-                    <div class="windh">Wind Speed   6.2</div>
+                    <p class="add-city accordion-container" onclick="addCity('Third','add2','add3')" id="add2">
+                        <i class="fa fa-plus accordion-btn1" aria-hidden="true" id="plus"> &nbsp; Add City</i>
+                        </p>
+                    <h1 class="temp">51°C</h1>
+                 
+                    <div class="description flex">Cloudy</div>
+                 
+                    <div class="humidity" style="padding-left: 0px;">Humidity    60%</div>
+                    <div class="wind">Wind Speed   6.2</div>
                 </div>
                 </div>
                 <div draggable="true" class="country-weather col-md-2">
-                    <div class="Mumbai parCity">
-                        <h2 class="citym">Weather in Mumbai</h2>
+                    <div class="Fourth parCity" id="Fourth">
+                        <h2 class="city">Weather in Mumbai</h2>
                         <div class="header">
                             <div class="dropdown">
-                                <ul class="dropbtn icons btn-right showLeft" onclick="showDropdown(3)">
+                                <ul class="dropbtn icons btn1-right showLeft" onclick="showDropdown(3)">
                                     <li></li>
                                     <li></li>
                                     <li></li>
                                 </ul>
                                 <div class="dropdown-content myDropdown">
-                                    <a href="#home" onclick="remove(3)">Remove</a>
+                                    <a href="#home" onclick="remove('Fourth','add3','add4')">Remove</a>
                                 </div>
                             </div>
                         </div>
-                        <h1 class="tempm">51°C</h1>
-                        <div class="flexm">
-                        <div class="descriptionm">Cloudy</div>
-                        </div>
-                        <div class="humiditym" style="padding-left: 0px;">Humidity    60%</div>
-                        <div class="windm">Wind Speed   6.2</div>
+                        <p class="add-city accordion-container" onclick="addCity('Fourth','add3','add4')" id="add3">
+                            <i class="fa fa-plus accordion-btn1" aria-hidden="true" id="plus"> &nbsp; Add City</i>
+                            </p>
+                        <h1 class="temp">51°C</h1>
+                       
+                        <div class="description flex">Cloudy</div>
+                       
+                        <div class="humidity" style="padding-left: 0px;">Humidity    60%</div>
+                        <div class="wind">Wind Speed   6.2</div>
                     </div>
                     </div>
                     <div draggable="true" class="country-weather col-md-2">
-                        <div class="Kolkata parCity">
-                            <h2 class="cityk">Weather in Kolkata</h2>
+                        <div class="Fifth parCity" id="Fifth">
+                            <h2 class="city">Weather in Kolkata</h2>
                             <div class="header">
                                 <div class="dropdown">
-                                    <ul class="dropbtn icons btn-right showLeft" onclick="showDropdown(4)">
+                                    <ul class="dropbtn icons btn1-right showLeft" onclick="showDropdown(4)">
                                         <li></li>
                                         <li></li>
                                         <li></li>
                                     </ul>
                                     <div class="dropdown-content myDropdown">
-                                        <a href="#home" onclick="remove(4)">Remove</a>
+                                        <a href="#home" onclick="remove('Fifth','add4','add5')">Remove</a>
                                     </div>
                                 </div>
-                            </div>
-                            <h1 class="tempk">51°C</h1>
-                            <div class="flexk">
-                            <div class="descriptionk">Cloudy</div>
-                            </div>
-                            <div class="humidityk" style="padding-left: 0px;">Humidity    60%</div>
-                            <div class="windk">Wind Speed   6.2</div>
+                            </div>       
+                            <p class="add-city accordion-container" onclick="addCity('Fifth','add4','add5')" id="add4">
+                                <i class="fa fa-plus accordion-btn1" aria-hidden="true" id="plus"> &nbsp; Add City</i>
+                                </p>                    
+                            <h1 class="temp">51°C</h1>
+                            <div class="description flex">Cloudy</div>
+                            <div class="humidity" style="padding-left: 0px;">Humidity    60%</div>
+                            <div class="wind">Wind Speed   6.2</div>
                         </div>
                     </div>
-                    <!--
-                        <div draggable="true" class="country-weather col-md-2">
-                        <div class="parCity">
-                            <h2 class="city" id="city">Weather in Kolkata</h2>
+               <div draggable="true" class="country-weather col-md-2" >
+                        <div class="Sixth parCity" id="Sixth">
+                            <h2 class="city" >Weather in Kolkata</h2>
                             <div class="header">
                                 <div class="dropdown">
-                                    <ul class="dropbtn icons btn-right showLeft" onclick="showDropdown(4)">
+                                    <ul class="dropbtn icons btn1-right showLeft" onclick="showDropdown(5)">
                                         <li></li>
                                         <li></li>
                                         <li></li>
                                     </ul>
                                     <div class="dropdown-content myDropdown">
-                                        <a href="#home" onclick="remove(4)">Remove</a>
+                                        <a href="#home" onclick="remove('Sixth','add5','add6')">Remove</a>
                                     </div>
                                 </div>
                             </div>
+                            <p class="add-city accordion-container" onclick="addCity('Sixth','add5','add6')" id="add5">
+                                <i class="fa fa-plus accordion-btn1" aria-hidden="true" id="plus"> &nbsp; Add City</i>
+                                </p>
                             <h1 class="temp" id="temp">51°C</h1>
-                            <div class="flex">
-                            <div class="description" id="desc">Cloudy</div>
-                            </div>
-                            <div class="humidity" id="humidity" style="padding-left: 0px;">Humidity    60%</div>
-                            <div class="wind" id="wind">Wind Speed   6.2</div>
+                            
+                            <div class="description flex" >Cloudy</div>
+                           
+                            <div class="humidity"  style="padding-left: 0px;">Humidity    60%</div>
+                            <div class="wind" >Wind Speed   6.2</div>
                         </div>
                     </div>
-                    -->
+               
                 </div>
             </section>
            
@@ -253,7 +275,41 @@
         window.addEventListener("DOMContentLoaded", () => {
           slist(document.getElementById("sortlist"));
         });
+       
+        $(function() {
+            $( "#sortlist" ).sortable({});
+        });
+      function addCity(cont,btn1,btn2)
+      {
+       document.getElementById(btn1).style.display="none";
+        let cityN= prompt("Enter the city Name");
+        var parent= document.getElementById(cont);
+       parent.style.visibility="visible";
+       if(btn2=='add1') document.getElementById('add1').style.display='block';
+       document.getElementById(btn2).style.visibility="visible";
+       let weatherN = {
+        apikey: "bc80fd2fa00aec4927ee0983987d1fd4",
+        fetchWeather: function (cityN) {
+        fetch("https://api.openweathermap.org/data/2.5/weather?q=" + cityN + "&units=metric&appid=" + this.apikey).then((response) => response.json()).then((datac) => this.displayWeather(datac));
+        },
+        displayWeather: function (dataN) {
+        console.log(dataN);
+        const { name } = dataN;
+        const { description } = dataN.weather[0];
+        const { temp, humidity } = dataN.main;
+        const { speed } = dataN.wind;
+        parent.children[0].innerHTML = name;
+        parent.children[4].innerText = description;
+        parent.children[3].innerText = temp + "  °C";
+        parent.children[5].innerText = "Humidity  " + humidity + "%";
+        parent.children[6].innerText = "Wind Speed  " + speed;
+        },
+      };
+weatherN.fetchWeather(cityN);
+
+      }
     </script>
+   
     
 </body>
 </html>
